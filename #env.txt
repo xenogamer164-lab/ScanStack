@@ -1,0 +1,157 @@
+#env
+.env
+.env.*
+
+# Logs
+/logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.env
+.vite
+{
+  "name": "Item",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the item"
+    },
+    "barcode": {
+      "type": "string",
+      "description": "Barcode or QR code value"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "electronics",
+        "food",
+        "clothing",
+        "tools",
+        "office",
+        "household",
+        "other"
+      ],
+      "description": "Item category"
+    },
+    "description": {
+      "type": "string",
+      "description": "Item description"
+    },
+    "quantity": {
+      "type": "number",
+{
+  "name": "LoyaltyPoints",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user"
+    },
+    "points": {
+      "type": "number",
+      "default": 0,
+      "description": "Total accumulated points"
+    },
+    "total_scans": {
+      "type": "number",
+      "default": 0,
+      "description": "Total number of scans performed"
+    }
+  },
+  "required": [
+    "user_email"
+  ]
+}
+{
+  "name": "ScanHistory",
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "description": "ID of the scanned item"
+    },
+    "item_name": {
+      "type": "string",
+      "description": "Name of the item at time of scan"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "scanned",
+        "added",
+        "updated",
+        "removed"
+      ],
+      "description": "What action was performed"
+    },
+    "barcode_value": {
+      "type": "string",
+      "description": "The barcode value that was scanned"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    }
+  },
+  "required": [
+    "item_name",
+    "action"
+  ]
+}
+{
+  "name": "ScanHistory",
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": "string",
+      "description": "ID of the scanned item"
+    },
+    "item_name": {
+      "type": "string",
+      "description": "Name of the item at time of scan"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "scanned",
+        "added",
+        "updated",
+        "removed"
+      ],
+      "description": "What action was performed"
+    },
+    "barcode_value": {
+      "type": "string",
+      "description": "The barcode value that was scanned"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    }
+  },
+  "required": [
+    "item_name",
+    "action"
+  ]
+}
